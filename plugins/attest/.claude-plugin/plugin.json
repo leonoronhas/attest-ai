@@ -1,0 +1,18 @@
+{
+    "name": "attest",
+    "version": "0.1.0",
+    "description": "Evidence-first agent skills. Every skill ends in the same verdict contract: PROVEN / NOT YET / CAN'T PROVE, backed by evidence produced this turn.",
+    "author": {
+        "name": "Leo Santos",
+        "url": "https://github.com/leonoronhas"
+    },
+    "license": "MIT",
+    "keywords": [
+        "verification",
+        "evidence",
+        "tdd",
+        "code-review",
+        "debugging",
+        "planning"
+    ]
+}

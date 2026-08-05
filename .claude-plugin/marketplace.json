@@ -1,0 +1,25 @@
+{
+    "name": "attest-ai",
+    "owner": {
+        "name": "Leo Santos",
+        "url": "https://github.com/leonoronhas"
+    },
+    "description": "First-person agent skills that make every claim carry a verdict backed by evidence produced this turn.",
+    "plugins": [
+        {
+            "name": "attest",
+            "source": "./plugins/attest",
+            "description": "Evidence-first SDLC skills: /i-prove verdicts (PROVEN / NOT YET / CAN'T PROVE), TDD at seams, two-axis review, root-cause debugging, and project adapters so the suite works in any repo.",
+            "category": "engineering",
+            "keywords": [
+                "verification",
+                "evidence",
+                "tdd",
+                "code-review",
+                "debugging",
+                "planning",
+                "sdlc"
+            ]
+        }
+    ]
+}
