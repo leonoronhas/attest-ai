@@ -18,6 +18,10 @@ part of the evidence-first ethos.
 - **[garrytan/gstack](https://github.com/garrytan/gstack)** (Garry Tan,
   MIT) — the sprint-shaped skill suite as a form; evidence artifacts
   attached to reviews; treating live QA as a first-class stage.
+- **[dietrichgebert/ponytail](https://github.com/dietrichgebert/ponytail)**
+  (Dietrich Gebert, MIT) — the minimalism ladder (reuse → stdlib → native →
+  installed dep → new code); debt markers that name a ceiling and an upgrade
+  trigger; compressed one-line review findings scored in net lines cut.
 
 ## Older roots, credited where the ideas actually originate
 

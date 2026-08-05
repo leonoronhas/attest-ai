@@ -81,7 +81,7 @@ conventions. If it is missing, run /i-setup — do not guess.
 | Understand | `i-explore` (inside the repo) · `i-research` (outside it) |
 | Decide | `i-interrogate` · `i-design` · `i-plan` |
 | Build | `i-code` · `i-refactor` · `i-debug` · `i-migrate` |
-| Review | `im-a-code-reviewer` · `im-a-security-reviewer` · `im-a-design-reviewer` · `im-a-dx-engineer` · `im-an-adversary` |
+| Review | `im-a-code-reviewer` · `im-a-security-reviewer` · `im-a-design-reviewer` · `im-a-dx-engineer` · `im-an-adversary` · `i-simplify` |
 | Verify | `im-a-qa-engineer` · `i-prove` (the exit contract) |
 | Ship | `i-ship` · `i-document` |
 | Setup | `i-setup` |

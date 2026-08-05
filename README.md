@@ -49,6 +49,7 @@ reviewer stance.
 | Build | `/i-code` — TDD at confirmed seams | ✅ |
 | Review | `/im-a-code-reviewer` — two-axis: standards vs spec | ✅ |
 | Review | `/im-a-security-reviewer` — reads the project's security model | ✅ |
+| Review | `/i-simplify` — hunts over-engineering; every finding names its replacement | ✅ |
 | Build | `/i-debug` — root cause before hypothesis; 3 failed fixes ⇒ question the architecture | planned |
 | Build | `/i-migrate` — schema changes with guards, dry-runs, rollback notes | planned |
 | Decide | `/i-interrogate` — one question at a time, recommendation attached | planned |
