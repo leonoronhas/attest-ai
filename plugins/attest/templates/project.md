@@ -52,6 +52,8 @@
 - **Documented standards files:**
 - **What counts as customer-facing:**
 - **Known pre-existing failures to exclude from review noise** (link the burndown issue, not a snapshot list):
+- **Adversarial review roster** (models available to `/im-an-adversary`, strongest first):
+- **Diff-package command** (writes commit list + stat + full diff to one file for clean-room reviewers):
 
 ## Conventions
 
