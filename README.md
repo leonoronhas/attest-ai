@@ -50,10 +50,10 @@ reviewer stance.
 | Review | `/im-a-code-reviewer` — two-axis: standards vs spec | ✅ |
 | Review | `/im-a-security-reviewer` — reads the project's security model | ✅ |
 | Review | `/i-simplify` — hunts over-engineering; every finding names its replacement | ✅ |
-| Build | `/i-debug` — root cause before hypothesis; 3 failed fixes ⇒ question the architecture | planned |
-| Build | `/i-migrate` — schema changes with guards, dry-runs, rollback notes | planned |
-| Decide | `/i-interrogate` — one question at a time, recommendation attached | planned |
-| Decide | `/i-plan` — mini-plan, or a decision-ticket map for work bigger than one session | planned |
+| Build | `/i-debug` — root cause before hypothesis; 3 failed fixes ⇒ question the architecture | ✅ |
+| Build | `/i-migrate` — schema changes with guards, dry-runs, rollback notes | ✅ |
+| Decide | `/i-interrogate` — one question at a time, recommendation attached | ✅ |
+| Decide | `/i-plan` — mini-plan, or a decision-ticket map for work bigger than one session | ✅ |
 | Understand | `/i-explore` · `/i-research` | planned |
 | Decide | `/i-design` — deep modules, seams, the deletion test | planned |
 | Build | `/i-refactor` — behavior proven unchanged | planned |
