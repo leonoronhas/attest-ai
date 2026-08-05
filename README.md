@@ -46,9 +46,9 @@ reviewer stance.
 | Verify | `/i-prove` — the exit contract every skill ends in | ✅ |
 | Setup | `/i-setup` — writes the project adapter | ✅ |
 | Review | `/im-an-adversary` — clean-room reviewer on a model that wrote none of the code, primed to refute | ✅ |
-| Build | `/i-code` — TDD at confirmed seams | planned |
-| Review | `/im-a-code-reviewer` — two-axis: standards vs spec | planned |
-| Review | `/im-a-security-reviewer` — reads the project's security model | planned |
+| Build | `/i-code` — TDD at confirmed seams | ✅ |
+| Review | `/im-a-code-reviewer` — two-axis: standards vs spec | ✅ |
+| Review | `/im-a-security-reviewer` — reads the project's security model | ✅ |
 | Build | `/i-debug` — root cause before hypothesis; 3 failed fixes ⇒ question the architecture | planned |
 | Build | `/i-migrate` — schema changes with guards, dry-runs, rollback notes | planned |
 | Decide | `/i-interrogate` — one question at a time, recommendation attached | planned |
