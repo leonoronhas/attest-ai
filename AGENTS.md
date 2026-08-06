@@ -16,6 +16,7 @@ agents.
 
 ## Always on — every turn, regardless of skill
 
+<!-- attest:always-on:start -->
 **The verdict contract.** Never claim work is done, fixed, passing, or
 correct without a verdict backed by evidence produced *this turn*:
 
@@ -45,6 +46,7 @@ then ~2, then ~3). If a step runs as one blocking call, say up front that
 silence until it returns is normal. Point questions at a side chat (`/btw`
 in Claude Code; elsewhere, a second session) instead of interrupting —
 interrupting discards in-flight work.
+<!-- attest:always-on:end -->
 
 ## When X → read this skill
 

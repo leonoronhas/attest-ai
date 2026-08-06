@@ -19,7 +19,7 @@ never restate a skill — they point at it.
 | Host | Files | Tier |
 |---|---|---|
 | Claude Code / Claude apps | `.claude-plugin/`, `plugins/attest/` | Full plugin — `claude plugin install attest@attest-ai` |
-| Codex | `.codex-plugin/plugin.json` → `plugins/attest/skills/` | Plugin — skills installed as a Codex plugin |
+| Codex | `plugins/attest/.codex-plugin/plugin.json` → `./skills/` | Plugin — skills installed as a Codex plugin |
 | Cursor | `.cursor/rules/attest.mdc` | Always-on project rule + dispatch table |
 | Codex/Gemini/opencode/Amp/Jules/Zed/Junie/Copilot/Antigravity/generic | `AGENTS.md` (repo root) | Instruction-tier — always-on contract + dispatch table |
 
