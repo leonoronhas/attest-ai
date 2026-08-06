@@ -1,6 +1,6 @@
 ---
 name: im-a-security-auditor
-description: Use for a deep security review of source code — a diff, a branch, named files, or a whole codebase — whenever the user asks "is this safe / exploitable", requests a security review or audit, or the code handles untrusted input, auth, file paths, network requests, crypto, or serialization (even if they don't say "security"). Traces untrusted input to dangerous sinks; every finding is re-verified against the code before it ships.
+description: Use for a deep security review of source code — a branch, named files, or a whole codebase — whenever the user asks "is this safe / exploitable", requests a security audit, or the code handles untrusted input, auth, file paths, network requests, crypto, or serialization (even if they don't say "security"). The single pre-merge diff belongs to im-a-security-reviewer; this is the deep sweep. Traces untrusted input to dangerous sinks; every finding is re-verified against the code before it ships.
 ---
 
 # I'm a Security Auditor

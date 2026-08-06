@@ -51,7 +51,7 @@ the specifics. No skill ever guesses your test command.
 
 ## The Family
 
-Two naming patterns: `i-<verb>` does the work, `im-a-<role>` puts on a
+Two naming patterns: `i-<verb>` does the work, `im-a(n)-<role>` puts on a
 reviewer's hat. Every skill runs the same shape — an iron law it won't
 break, a numbered pass that produces evidence, and the verdict contract to
 close. The table runs in the order work tends to flow.
@@ -82,6 +82,7 @@ close. The table runs in the order work tends to flow.
 | **Ship** | `/i-ship` | The PR as a verifiable claim package: base synced, canonical check run, diff self-reviewed cold, a body a stranger can act on, CI watched to green. |
 | | `/i-document` | The docs the change demands. Every claim enforced, verified, or cut — a hedge is a claim nobody checked. Run every command the doc states. |
 | **Setup** | `/i-setup` | Interview the repo and write `.claude/attest/project.md` + `security-model.md`, so no skill ever guesses your commands. |
+| | `/i-upgrade` | Compare installed to marketplace version, read the changelog delta, run the host's upgrade path, then re-run setup so the adapter matches the new suite. |
 
 See [TEMPLATE.md](TEMPLATE.md) for the skeleton every skill follows.
 
@@ -105,6 +106,25 @@ Run the release-artifact validation before publishing changes:
 ```bash
 node scripts/validate-release.mjs
 ```
+
+### Versioning
+
+Versions live in the two plugin manifests (the validator keeps them equal)
+and follow one test — **would an agent following the suite yesterday and
+today behave identically?**
+
+- **Patch** (0.9.0 → 0.9.1) — yes: wording fixes that change no rule, doc
+  corrections, validator and CI internals, manifest metadata.
+- **Minor** (0.9.x → 0.10.0) — no, compatibly: a new skill, a new Pass
+  step, a new adapter slot, a description change that alters when a skill
+  fires.
+- **Major** (→ 1.0, then 2.0) — a contract break: verdict-spine semantics,
+  a skill renamed or removed, an adapter slot renamed or removed. 1.0 is
+  the deliberate promise that those contracts now only break with a major.
+
+Releasing: bump both manifests, move CHANGELOG's Unreleased into the new
+version's section, commit, then tag (`git tag vX.Y.Z && git push origin
+vX.Y.Z`). Installed copies pick the release up through `/i-upgrade`.
 
 ## Credits
 

@@ -7,8 +7,8 @@ internalizes.
 ## Naming
 
 - `i-<verb>` — performs an action (`/i-code`, `/i-debug`, `/i-plan`)
-- `im-a-<role>` — adopts a reviewer stance (`/im-a-code-reviewer`,
-  `/im-a-security-reviewer`)
+- `im-a(n)-<role>` — adopts a reviewer stance (`/im-a-code-reviewer`,
+  `/im-an-adversary`)
 
 ## Skeleton
 
@@ -64,7 +64,10 @@ conventions. If it is missing, run /i-setup — do not guess.
    something that exists after the item ran.
 3. **The Verdict section is byte-identical across the family.** Source of
    truth is `plugins/attest/skills/i-attest/SKILL.md`. When it changes,
-   it changes everywhere in the same commit.
+   it changes everywhere in the same commit — `scripts/validate-release.mjs`
+   fails the build when any copy drifts. One template exemption exists:
+   `i-setup` carries no Project Specifics section, because it is the skill
+   that writes that file.
 4. **No stack names in skill bodies.** Commands, frameworks, and paths come
    from the project adapter (`.claude/attest/project.md`). If a skill needs
    a fact the adapter lacks, add a slot to the template, don't inline it.
@@ -101,7 +104,10 @@ conventions. If it is missing, run /i-setup — do not guess.
    one JSON line per run: `{"skill", "step", "date", "elapsed_s", "scope"}`.
    ETAs are read from that ledger (this user's real prior runs, as ranges)
    or stated as "unknown" — never invented. The ledger is per-user and
-   gitignored; `/i-setup` creates it and the ignore entry.
+   gitignored; `/i-setup` creates it and the ignore entry. The in-skill
+   paragraph that opens a long-running Pass ("Publish these steps as a live
+   checklist…") is a second spine: byte-identical wherever it appears,
+   enforced by the validator like the verdict block.
 
 ## Family Map
 
@@ -114,4 +120,4 @@ conventions. If it is missing, run /i-setup — do not guess.
 | Review | `im-a-code-reviewer` · `im-a-security-reviewer` · `im-a-security-auditor` · `im-a-performance-reviewer` · `im-a-design-reviewer` · `im-a-dx-engineer` · `im-an-adversary` · `i-simplify` |
 | Verify | `im-a-qa-engineer` · `i-attest` (the exit contract) |
 | Ship | `i-ship` · `i-document` |
-| Setup | `i-setup` |
+| Setup | `i-setup` · `i-upgrade` |

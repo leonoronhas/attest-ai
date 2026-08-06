@@ -7,7 +7,7 @@ for the host you are running in.
 
 ## What attest is
 
-A suite of ~23 first-person skills (`/i-code`, `/im-a-code-reviewer`,
+A suite of first-person skills (`/i-code`, `/im-a-code-reviewer`,
 `/i-attest`, …) that make every completion claim carry a verdict backed by
 evidence produced this turn. Each skill is a `SKILL.md` under
 `plugins/attest/skills/<name>/` — plain markdown you can read and follow.
