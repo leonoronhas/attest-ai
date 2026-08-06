@@ -76,6 +76,7 @@ interrupting discards in-flight work.
 | turn finished work into a PR | `i-ship` |
 | write or update documentation | `i-document` |
 | set the suite up in a new repo | `i-setup` |
+| check for or apply a newer suite version | `i-upgrade` |
 
 Skill paths: `plugins/attest/skills/<name>/SKILL.md`.
 

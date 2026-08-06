@@ -10,6 +10,7 @@
 - **Stack:**
 - **Package manager & version:**
 - **Monorepo:** yes/no — orchestrator if any:
+- **attest version installed:** <!-- stamped by /i-setup and /i-upgrade; the installed manifest is the truth, this line is the note -->
 
 ## Commands
 
@@ -54,6 +55,8 @@
 - **Tracker:**
 - **How specs are referenced in commits/branches:**
 - **How to fetch an issue:**
+- **How to create an issue / draft** (the exact MCP tool or CLI command):
+- **Draft convention** (label/state marking agent-created drafts pending human approval):
 
 ## Review Inputs
 
@@ -62,6 +65,16 @@
 - **Known pre-existing failures to exclude from review noise** (link the burndown issue, not a snapshot list):
 - **Adversarial review roster** (models available to `/im-an-adversary`, strongest first):
 - **Diff-package command** (writes commit list + stat + full diff to one file for clean-room reviewers):
+
+## Toolbox
+
+<!-- Detected by /i-setup; re-stamped by /i-upgrade and /i-setup re-runs.
+     A skill reaching for a tool not listed here says the Toolbox may be
+     stale and suggests re-running /i-setup — it does not guess. -->
+
+- **Detected on:**
+- **MCP servers available** (name → what it serves, e.g. browser automation → QA and design review; tracker → intake and planning):
+- **CLIs available** (gh, db clients, deploy tools — and the guard each requires):
 
 ## Conventions
 

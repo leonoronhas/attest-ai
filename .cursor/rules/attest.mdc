@@ -73,6 +73,7 @@ interrupting discards in-flight work.
 | turn finished work into a PR | `i-ship` |
 | write or update docs | `i-document` |
 | set the suite up in a new repo | `i-setup` |
+| check for or apply a newer suite version | `i-upgrade` |
 
 Skills name no stack; per-repo commands and threat model live in
 `.claude/attest/project.md` and `security-model.md` (written by `i-setup`).
