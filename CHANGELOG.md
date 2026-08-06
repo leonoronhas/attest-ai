@@ -7,7 +7,7 @@ stays 0.x while the skill surface is still moving. Patch = no behavior
 change; minor = new skills or compatible behavior change; major = contract
 breaks — the full policy is in README § Development.
 
-## [Unreleased]
+## [0.10.0] — 2026-08-06
 
 ### Added
 
@@ -52,6 +52,8 @@ breaks — the full policy is in README § Development.
 
 - Stale "~23" skill count in docs/for-llms.md (the count is 24 and moving;
   the docs no longer state one)
+- Codex install block in docs/for-llms.md carries real commands, verified
+  against a live install (previously an empty placeholder fence)
 - Naming pattern documented as `im-a(n)-<role>`, matching im-an-adversary
 
 ## [0.9.0] — 2026-08-06
