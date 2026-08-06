@@ -38,14 +38,9 @@ reads as a hung one.
 
 **Keep the user fed during long runs.** Announce any step likely to exceed a
 minute before it starts — what's running and when the next update comes.
-ETAs come from the timings ledger (`.claude/attest/timings.local.jsonl` —
-per-user, gitignored; append each run's elapsed, read it before estimating)
-or are stated as "unknown" — never invented. Update at every boundary, and
-in quiet stretches post one-line statuses at escalating intervals (~1 min,
-then ~2, then ~3). If a step runs as one blocking call, say up front that
-silence until it returns is normal. Point questions at a side chat (`/btw`
-in Claude Code; elsewhere, a second session) instead of interrupting —
-interrupting discards in-flight work.
+Never invent an ETA: a real basis (the timings ledger) or "unknown". Every
+long-running skill carries the full progress protocol in its Pass — follow
+it there.
 <!-- attest:always-on:end -->
 
 ## When X → read this skill

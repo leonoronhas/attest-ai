@@ -35,6 +35,9 @@ breaks — the full policy is in README § Development.
 
 ### Changed
 
+- Always-on contract slimmed: the long-run rule is now a three-line kernel
+  (announce steps over a minute, never invent an ETA) pointing at the full
+  progress protocol every long-running skill carries in its Pass
 - Codex manifest moved into the plugin root
   (`plugins/attest/.codex-plugin/`) with plugin-relative skill paths (PR #1)
 - im-a-security-auditor prepares tracked-issue drafts and creates them only
