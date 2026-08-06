@@ -29,11 +29,16 @@ claude plugin install attest@attest-ai
 **Codex** (plugin):
 
 ```bash
-# from a clone of this repo, or point Codex at plugins/attest/.codex-plugin/plugin.json
+# from a clone of this repo
+codex plugin marketplace add "$PWD"
+codex plugin add attest@attest-ai
 ```
 
-The manifest at `plugins/attest/.codex-plugin/plugin.json` registers the
-skills under `plugins/attest/skills/`.
+(`codex` is the Codex CLI — on macOS the desktop app ships it at
+`/Applications/Codex.app/Contents/Resources/codex` if it isn't on your
+PATH.) The manifest at `plugins/attest/.codex-plugin/plugin.json` registers
+the skills under `plugins/attest/skills/`; the install caches each skill's
+`SKILL.md` under `~/.codex/plugins/cache/attest-ai/attest/<version>/`.
 
 **Cursor**: the file `.cursor/rules/attest.mdc` is an always-on project rule.
 It applies automatically once this repo (or a copy of that file) is in the
