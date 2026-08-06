@@ -55,6 +55,7 @@ reviewer stance.
 | Build | `/i-migrate` — schema changes with guards, dry-runs, rollback notes | ✅ |
 | Decide | `/i-interrogate` — one question at a time, recommendation attached | ✅ |
 | Decide | `/i-plan` — mini-plan, or a decision-ticket map for work bigger than one session | ✅ |
+| Build | `/i-execute` — runs a plan: live roadmap, fresh subagent per task, review between tasks | ✅ |
 | Understand | `/i-explore` — locations with evidence; absence claims name the searches that failed | ✅ |
 | Understand | `/i-research` — primary sources, version-pinned, captured in the repo | ✅ |
 | Decide | `/i-design` — two designs minimum, judged at the interface, deletion test | ✅ |

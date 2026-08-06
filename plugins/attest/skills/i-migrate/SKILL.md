@@ -17,6 +17,8 @@ And one rule the type system cannot enforce, so this skill must: **constraints o
 
 ## The Pass
 
+Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands.
+
 1. **Run the guard.** The adapter's destructive-op guard before any command that writes to a database — and it must fail *closed*: if the target can't be determined, the answer is no. Local tooling resolves targets through config files that can silently point anywhere, including production.
 2. **Name the downstream consumers.** A schema is an interface; the migration changes its contract. List every consumer before writing it: generated types, seed and fixture generators, caches, reports, other services reading the same tables. Each one is a task this migration creates — an unnamed consumer is a breakage scheduled for later.
 3. **Dry-run, and read the plan.** Preview what will execute against a real copy (local instance or branch database) before anything applies. The dry-run output is evidence for the verdict table; "the file looks right" is not.

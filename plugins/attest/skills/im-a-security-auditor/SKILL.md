@@ -26,6 +26,8 @@ The mental model the whole pass runs on:
 
 ## The Pass
 
+Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands.
+
 1. **Orient and set scope.** Language, framework, what the code does, trust boundaries, assets worth protecting. Then pin the scope — uncommitted changes, branch-vs-base, a named range, or the whole codebase. If the user didn't say and more than one reading is plausible, **ask before scanning**: a security review of the wrong scope wastes the entire pass. Load `.claude/attest/security-model.md` to order the sweep by this project's real blast radius.
 2. **Enumerate sources and sinks** for the scoped code — one shared map handed to every scanner so they don't each rediscover it.
 3. **Fan out — one scanner per vulnerability family.** Nine scanners: eight pattern-based (Injection SQL/cmd/code/XSS · XXE & ReDoS · Path & Network · Auth & Access · Memory safety · Cryptography · Deserialization · Protocol & Encoding) plus an open-ended **Exploratory** pass for business-logic and novel issues the pattern scanners miss. Each scanner reads only its section of [references/vulnerability-catalog.md](references/vulnerability-catalog.md), scans its class only, and reports *every* candidate — recall over precision here, because verification restores precision later. Dispatch as parallel subagents where available; where not, run them sequentially, one class to completion at a time. Skip a clearly-inapplicable family (memory safety in a pure-Python web app) only by saying so, never silently. The exploratory scanner always runs.

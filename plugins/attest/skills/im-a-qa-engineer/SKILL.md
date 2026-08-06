@@ -17,6 +17,8 @@ Objective signals: console errors, unexpected 4xx/5xx, crashes, unhandled reject
 
 ## The Pass
 
+Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands.
+
 1. **Boot the real thing.** The adapter's environment procedure: guards first, seeded data, the app on its fixed ports. QA against an empty database tests the empty states and nothing else — no data, no QA. Environment won't boot? That's the first finding, and everything downstream is CAN'T PROVE, not assumed-fine.
 2. **Scope the drive to the change.** The routes and flows the diff touches, plus the adjacent critical flows that share their code paths — a change to one form has siblings. The adapter names the critical flows; "adjacent" is decided by imports, not vibes.
 3. **Drive like a user, watch like a machine.** Real clicks, real typing, real navigation — while monitoring the objective channels: console, network, process health. The user's path finds the bug; the channels prove it happened.

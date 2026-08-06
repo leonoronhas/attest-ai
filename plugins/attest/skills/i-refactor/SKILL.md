@@ -17,6 +17,8 @@ The mixed diff is the cardinal sin: a structure change and a behavior change in 
 
 ## The Pass
 
+Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands.
+
 1. **Pin the behavior.** The code being reshaped has covering tests, and they pass — run them, read the count. No coverage? Write **characterization tests** first: assert what the code *actually does*, warts included. A characterization test that documents a bug is correct — the bug is current behavior, and fixing it is a separate, later diff.
 2. **Declare the target shape and its source.** What the structure becomes and why — an `/i-simplify` finding, an `/i-design` decision, a duplication to collapse. A refactor without a stated destination wanders, and wandering refactors are where behavior changes sneak in.
 3. **Move in small reversible steps, green after each.** Extract, run; rename, run; inline, run. A red mid-step means the step was too big — revert it and take a smaller one, never "fix it forward" while red, because forward-fixing while red is behavior change under cover of noise.

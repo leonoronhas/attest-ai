@@ -31,7 +31,8 @@ description: Use when <trigger condition>, before <the thing this gates>.
 ## The Pass
 
 <N numbered items. Each item is an ACTION that produces output.
- An item you can satisfy by thinking about it is not an item.>
+ An item you can satisfy by thinking about it is not an item.
+ The Pass IS the checklist — see rule 7: publish it live and mark it.>
 
 ## Verdict
 
@@ -72,6 +73,16 @@ conventions. If it is missing, run /i-setup — do not guess.
 6. **Rationalization tables are behavioral code.** Write the excuses an
    agent actually generates, in first person, and refute each with the
    mechanism, not a slogan.
+7. **Publish the Pass as a live checklist.** Before running a multi-step
+   Pass, surface its steps to the user through the harness's todo/checklist
+   tool (`TodoWrite`, a task list, or the equivalent — tool-agnostic, like
+   the rest of the suite) and mark each step done only when its evidence
+   lands. The Pass a skill already defines *is* the checklist; this rule is
+   about making the run visible and mutually legible, not inventing a
+   second list. A silent multi-step run reads as a hung one, and the
+   checkmarks are where the verdict table's evidence accretes step by step.
+   Trivial single-step skills need no checklist; anything with three or
+   more Pass items gets one.
 
 ## Family Map
 
@@ -80,7 +91,7 @@ conventions. If it is missing, run /i-setup — do not guess.
 | Intake | `im-a-tpm` |
 | Understand | `i-explore` (inside the repo) · `i-research` (outside it) |
 | Decide | `i-interrogate` · `i-design` · `i-plan` |
-| Build | `i-code` · `i-refactor` · `i-debug` · `i-migrate` |
+| Build | `i-code` · `i-refactor` · `i-debug` · `i-migrate` · `i-execute` (orchestrates a plan) |
 | Review | `im-a-code-reviewer` · `im-a-security-reviewer` · `im-a-security-auditor` · `im-a-design-reviewer` · `im-a-dx-engineer` · `im-an-adversary` · `i-simplify` |
 | Verify | `im-a-qa-engineer` · `i-attest` (the exit contract) |
 | Ship | `i-ship` · `i-document` |

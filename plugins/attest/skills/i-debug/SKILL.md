@@ -17,6 +17,8 @@ The pull to skip this is strongest exactly when it matters most: under time pres
 
 ## The Pass
 
+Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands.
+
 1. **Reproduce it.** A command that fails now and will pass when the bug is dead — run it, watch it fail, keep it. Can't reproduce? Then the job is gathering data (logs, inputs, environment diffs), not fixing. A bug you can't trigger is a bug you can't verify dead.
 2. **Read the error to the bottom.** The full message, the full stack, the actual line. Error messages routinely contain the answer, and get skimmed because they're long. Note what it says *and* what it conspicuously doesn't.
 3. **Check what changed.** Recent commits, dependency bumps, config edits, environment differences between where it works and where it doesn't. Most bugs are young — the diff since "it worked" is the smallest haystack.
