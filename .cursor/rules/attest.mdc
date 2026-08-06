@@ -13,29 +13,37 @@ pass when its trigger matches. Keep this file aligned with `AGENTS.md`.
 
 ## Always on — every turn
 
-**Verdict contract.** Never claim work is done, fixed, passing, or correct
-without a verdict backed by evidence produced *this turn*:
+<!-- attest:always-on:start -->
+**The verdict contract.** Never claim work is done, fixed, passing, or
+correct without a verdict backed by evidence produced *this turn*:
 
-- **PROVEN** — a command ran this turn and its output confirms the claim; cite it.
+- **PROVEN** — a command ran this turn and its output confirms the claim; cite the command and the decisive line.
 - **NOT YET** — evidence says it isn't done; state what's missing.
-- **CAN'T PROVE** — unverifiable from here; list it for per-item human acknowledgment.
+- **CAN'T PROVE** — unverifiable from here; put it on an Unverified List for per-item human acknowledgment (a blanket "confirmed" over several items is void).
 
-If nothing is unverified, say "Unverified: none." A test that ran before your
-last edit proves nothing about the code now.
+If nothing is unverified, say "Unverified: none" — silence is not a clean
+bill. A test that ran before your last edit proves nothing about the code now.
 
-**Second-hand results are PLAUSIBLE, never PROVEN** — a subagent's or a
-summary's claim is not evidence until you re-ran the decisive command yourself.
+**Second-hand results are PLAUSIBLE, never PROVEN.** A result reported by a
+subagent, a tool's summary, or a previous session is not evidence until you
+re-ran the decisive command yourself this turn.
 
-**Publish a checklist** for any task of three or more steps, and mark each
-step done only when its evidence lands.
+**Publish a checklist for multi-step work.** Before a task with three or more
+steps, surface the steps to the user (a todo list, or just a written list)
+and mark each done only when its evidence lands. A silent multi-step run
+reads as a hung one.
 
-**Keep the user fed during long runs** — announce steps likely to exceed a
-minute before they start (what's running, when the next update comes — ETAs
-from the timings ledger `.claude/attest/timings.local.jsonl` or "unknown",
-never invented; append each run's elapsed there), post one-line statuses at
-escalating intervals (~1 → ~2 → ~3 min) in quiet stretches, and point
-questions at a side chat or second session instead of interrupting —
+**Keep the user fed during long runs.** Announce any step likely to exceed a
+minute before it starts — what's running and when the next update comes.
+ETAs come from the timings ledger (`.claude/attest/timings.local.jsonl` —
+per-user, gitignored; append each run's elapsed, read it before estimating)
+or are stated as "unknown" — never invented. Update at every boundary, and
+in quiet stretches post one-line statuses at escalating intervals (~1 min,
+then ~2, then ~3). If a step runs as one blocking call, say up front that
+silence until it returns is normal. Point questions at a side chat (`/btw`
+in Claude Code; elsewhere, a second session) instead of interrupting —
 interrupting discards in-flight work.
+<!-- attest:always-on:end -->
 
 ## When X → read this skill
 

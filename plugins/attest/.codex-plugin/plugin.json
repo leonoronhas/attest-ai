@@ -10,7 +10,7 @@
     "repository": "https://github.com/leonoronhas/attest-ai",
     "license": "MIT",
     "keywords": ["verification", "evidence", "tdd", "code-review", "debugging", "planning"],
-    "skills": "../plugins/attest/skills/",
+    "skills": "./skills/",
     "interface": {
         "displayName": "attest",
         "shortDescription": "Evidence-first SDLC skills",

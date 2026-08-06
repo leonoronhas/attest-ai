@@ -29,7 +29,8 @@ claude plugin install attest@attest-ai
 `AGENTS.md` at the repo root — Codex, Cursor, opencode, Gemini CLI, Amp,
 Jules, Zed, Junie, Copilot, Antigravity — picks up the always-on contract
 and a dispatch table pointing at the skills, with zero setup. Codex and
-Cursor also get dedicated adapters (`.codex-plugin/`, `.cursor/rules/`). See
+Cursor also get dedicated adapters (`plugins/attest/.codex-plugin/`,
+`.cursor/rules/`). See
 [docs/agent-portability.md](docs/agent-portability.md).
 
 **Pointing an AI agent at this repo?** [docs/for-llms.md](docs/for-llms.md)
@@ -96,6 +97,14 @@ See [TEMPLATE.md](TEMPLATE.md) for the skeleton every skill follows.
    commands live in your repo.
 5. **Rationalization tables are code.** Each skill lists the excuses an
    agent actually generates and refutes them mechanically.
+
+## Development
+
+Run the release-artifact validation before publishing changes:
+
+```bash
+node scripts/validate-release.mjs
+```
 
 ## Credits
 

@@ -33,7 +33,7 @@ Publish these steps as a live checklist before you start (the harness todo tool)
 3. **Fan out — one scanner per vulnerability family.** Nine scanners: eight pattern-based (Injection SQL/cmd/code/XSS · XXE & ReDoS · Path & Network · Auth & Access · Memory safety · Cryptography · Deserialization · Protocol & Encoding) plus an open-ended **Exploratory** pass for business-logic and novel issues the pattern scanners miss. Each scanner reads only its section of [references/vulnerability-catalog.md](references/vulnerability-catalog.md), scans its class only, and reports *every* candidate — recall over precision here, because verification restores precision later. Dispatch as parallel subagents where available; where not, run them sequentially, one class to completion at a time. Skip a clearly-inapplicable family (memory safety in a pure-Python web app) only by saying so, never silently. The exploratory scanner always runs.
 4. **Fan in.** Collect all scanners' findings into one list once every scanner has returned — then dedupe and cross-reference, since one line may be flagged by several classes and one bug may enable another (SSRF → metadata creds → privesc).
 5. **Verify every finding yourself — mandatory, orchestrator only.** Per finding: re-open the cited code (scanners misremember lines and hallucinate sinks); re-trace the source→sink path (a "source" that's actually constant or already-validated is a false positive — drop it); re-test the control (a scanner in isolation misses a mitigation applied elsewhere). Settle a verdict: CONFIRMED only with a traced exploitable path this turn, PLAUSIBLE with the unproven assumption named, or discarded. Record a one-line verification note per survivor.
-6. **Rate, report, ratchet.** Severity = impact × exploitability (Critical/High/Medium/Low/Informational), reasoning stated not asserted. Per finding: location, class + CWE, what, why-exploitable with a minimal illustrative trigger (never a turnkey exploit), and the concrete fix naming the safe API. Highest-impact first. Every confirmed finding becomes a tracked issue before the audit ends; new sensitive surfaces found en route get added to `security-model.md` so the audit leaves the threat model sharper than it found it.
+6. **Rate, report, ratchet.** Severity = impact × exploitability (Critical/High/Medium/Low/Informational), reasoning stated not asserted. Per finding: location, class + CWE, what, why-exploitable with a minimal illustrative trigger (never a turnkey exploit), and the concrete fix naming the safe API. Highest-impact first. Prepare a tracked-issue draft for every confirmed finding; create it only with the user's explicit tracker-write authorization. New sensitive surfaces found en route get added to `security-model.md` so the audit leaves the threat model sharper than it found it.
 
 ## Delivery
 
@@ -66,7 +66,7 @@ Render the verdict as a table:
 - A finding with no written source→sink path and no minimal trigger
 - A family silently skipped instead of declared inapplicable
 - The exploratory scanner cut for time — it catches the highest-impact, hardest-to-spot bugs
-- An audit ending with findings in a document and zero tracked issues
+- An audit ending with findings but neither issue drafts nor an explicit decision to defer them
 - A turnkey exploit written where a minimal proof-of-concept was the job
 
 ## Rationalizations
@@ -77,7 +77,7 @@ Render the verdict as a table:
 | "The scanner is usually right, skip verification" | Usually-right at scale is wrong steadily. The verification pass is the audit's signature. |
 | "One combined scan is faster than nine" | One scan satisfices after two bugs. Per-class focus is what stops it quitting early. |
 | "This hardening gap is worth flagging" | In a backlog, yes. In the report, it's noise wearing a severity label. |
-| "I'll file the issues after the report circulates" | Reports circulate into archives; issues get assigned. File them now. |
+| "I'll file the issues after the report circulates" | Reports circulate into archives; prepare the issue drafts now, then create them when authorized. |
 | "Client-side check missing — easy finding" | Easy and invalid. The server owes the check; audit the server. |
 
 ## Boundary
