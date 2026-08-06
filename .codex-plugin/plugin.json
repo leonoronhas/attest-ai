@@ -1,0 +1,28 @@
+{
+    "name": "attest",
+    "version": "0.8.0",
+    "description": "Evidence-first agent skills. Every skill ends in the same verdict contract: PROVEN / NOT YET / CAN'T PROVE, backed by evidence produced this turn.",
+    "author": {
+        "name": "Leo Santos",
+        "url": "https://github.com/leonoronhas"
+    },
+    "homepage": "https://github.com/leonoronhas/attest-ai",
+    "repository": "https://github.com/leonoronhas/attest-ai",
+    "license": "MIT",
+    "keywords": ["verification", "evidence", "tdd", "code-review", "debugging", "planning"],
+    "skills": "../plugins/attest/skills/",
+    "interface": {
+        "displayName": "attest",
+        "shortDescription": "Evidence-first SDLC skills",
+        "longDescription": "A family of first-person skills that make every completion claim carry a verdict backed by evidence produced this turn, with project adapters so the suite works in any repo.",
+        "developerName": "Leo Santos",
+        "category": "Engineering",
+        "capabilities": ["Instructions"],
+        "websiteURL": "https://github.com/leonoronhas/attest-ai",
+        "defaultPrompt": [
+            "Prove this is done with i-attest.",
+            "Review this diff with im-a-code-reviewer.",
+            "Plan this work with i-plan."
+        ]
+    }
+}

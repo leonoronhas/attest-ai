@@ -1,0 +1,61 @@
+---
+description: attest — evidence-first engineering. Every completion claim carries a verdict backed by evidence produced this turn.
+globs:
+alwaysApply: true
+---
+
+# attest — evidence-first engineering
+
+The full skills live under `plugins/attest/skills/<name>/SKILL.md` — the
+single source of truth. This rule carries the always-on contract and points
+you at the right skill; open that skill's `SKILL.md` and follow its numbered
+pass when its trigger matches. Keep this file aligned with `AGENTS.md`.
+
+## Always on — every turn
+
+**Verdict contract.** Never claim work is done, fixed, passing, or correct
+without a verdict backed by evidence produced *this turn*:
+
+- **PROVEN** — a command ran this turn and its output confirms the claim; cite it.
+- **NOT YET** — evidence says it isn't done; state what's missing.
+- **CAN'T PROVE** — unverifiable from here; list it for per-item human acknowledgment.
+
+If nothing is unverified, say "Unverified: none." A test that ran before your
+last edit proves nothing about the code now.
+
+**Second-hand results are PLAUSIBLE, never PROVEN** — a subagent's or a
+summary's claim is not evidence until you re-ran the decisive command yourself.
+
+**Publish a checklist** for any task of three or more steps, and mark each
+step done only when its evidence lands.
+
+## When X → read this skill
+
+| When you are about to… | Follow |
+|---|---|
+| triage a feature request before it becomes a ticket | `im-a-tpm` |
+| find where something lives / how a flow works | `i-explore` |
+| establish a fact about a library, API, or platform | `i-research` |
+| resolve decisions that are the human's to make | `i-interrogate` |
+| shape a module or interface before building | `i-design` |
+| plan work before code | `i-plan` |
+| run a multi-task plan start to finish | `i-execute` |
+| implement a feature or bug fix | `i-code` |
+| change structure without changing behavior | `i-refactor` |
+| diagnose something broken or slow | `i-debug` |
+| change a database schema | `i-migrate` |
+| hunt over-engineering / decide what to delete | `i-simplify` |
+| review a diff before merge | `im-a-code-reviewer` |
+| get a second opinion from a mind that didn't write it | `im-an-adversary` |
+| security-review one diff | `im-a-security-reviewer` |
+| security-audit a whole codebase | `im-a-security-auditor` |
+| review a UI change | `im-a-design-reviewer` |
+| audit developer experience | `im-a-dx-engineer` |
+| verify by driving the real app | `im-a-qa-engineer` |
+| claim work is complete (exit contract) | `i-attest` |
+| turn finished work into a PR | `i-ship` |
+| write or update docs | `i-document` |
+| set the suite up in a new repo | `i-setup` |
+
+Skills name no stack; per-repo commands and threat model live in
+`.claude/attest/project.md` and `security-model.md` (written by `i-setup`).
