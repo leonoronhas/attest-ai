@@ -64,7 +64,7 @@ conventions. If it is missing, run /i-setup — do not guess.
    something that exists after the item ran.
 3. **The Verdict section is byte-identical across the family.** Source of
    truth is `plugins/attest/skills/i-attest/SKILL.md`. When it changes,
-   it changes everywhere in the same commit — `scripts/validate-release.mjs`
+   it changes everywhere in the same commit — `scripts/validate-release.sh`
    fails the build when any copy drifts. One template exemption exists:
    `i-setup` carries no Project Specifics section, because it is the skill
    that writes that file.

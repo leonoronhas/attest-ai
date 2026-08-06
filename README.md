@@ -99,32 +99,10 @@ See [TEMPLATE.md](TEMPLATE.md) for the skeleton every skill follows.
 5. **Rationalization tables are code.** Each skill lists the excuses an
    agent actually generates and refutes them mechanically.
 
-## Development
+## Contributing
 
-Run the release-artifact validation before publishing changes:
-
-```bash
-node scripts/validate-release.mjs
-```
-
-### Versioning
-
-Versions live in the two plugin manifests (the validator keeps them equal)
-and follow one test — **would an agent following the suite yesterday and
-today behave identically?**
-
-- **Patch** (0.9.0 → 0.9.1) — yes: wording fixes that change no rule, doc
-  corrections, validator and CI internals, manifest metadata.
-- **Minor** (0.9.x → 0.10.0) — no, compatibly: a new skill, a new Pass
-  step, a new adapter slot, a description change that alters when a skill
-  fires.
-- **Major** (→ 1.0, then 2.0) — a contract break: verdict-spine semantics,
-  a skill renamed or removed, an adapter slot renamed or removed. 1.0 is
-  the deliberate promise that those contracts now only break with a major.
-
-Releasing: bump both manifests, move CHANGELOG's Unreleased into the new
-version's section, commit, then tag (`git tag vX.Y.Z && git push origin
-vX.Y.Z`). Installed copies pick the release up through `/i-upgrade`.
+Skill authoring ([TEMPLATE.md](TEMPLATE.md)), validation, versioning, and
+the release ritual live in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Credits
 

@@ -5,7 +5,17 @@ manifests' (`plugins/attest/.claude-plugin/plugin.json` and
 `.codex-plugin/plugin.json` — the validator keeps them equal). The suite
 stays 0.x while the skill surface is still moving. Patch = no behavior
 change; minor = new skills or compatible behavior change; major = contract
-breaks — the full policy is in README § Development.
+breaks — the full policy is in CONTRIBUTING.md.
+
+## [0.10.1] — 2026-08-06
+
+### Changed
+
+- Maintainer docs (validation, versioning, release ritual) moved from the
+  README to CONTRIBUTING.md — the README of a public repo is for consumers
+- Validator rewritten as a dependency-free shell script
+  (`scripts/validate-release.sh`) — no runtime, no toolchain, nothing to
+  install; portable across BSD/macOS and GNU/Linux; CI runs it directly
 
 ## [0.10.0] — 2026-08-06
 
@@ -19,7 +29,7 @@ breaks — the full policy is in README § Development.
   servers and CLIs with a detected-on stamp)
 - i-setup detects the tracker, the Toolbox, and the installed version
   during its detect pass
-- Versioning policy (patch/minor/major + release ritual) in README
+- Versioning policy (patch/minor/major + release ritual)
 
 - `scripts/validate-release.mjs` — release validator: marketplace → manifest
   → skills resolution, verdict-spine identity across every skill, always-on
