@@ -32,6 +32,11 @@ and a dispatch table pointing at the skills, with zero setup. Codex and
 Cursor also get dedicated adapters (`.codex-plugin/`, `.cursor/rules/`). See
 [docs/agent-portability.md](docs/agent-portability.md).
 
+**Pointing an AI agent at this repo?** [docs/for-llms.md](docs/for-llms.md)
+is written for the agent — how to install attest for its host, run `/i-setup`,
+and use the skills. If you pasted this link into an assistant, tell it to read
+that file.
+
 Then, in each repo that uses it:
 
 ```

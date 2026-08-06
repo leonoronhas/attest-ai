@@ -10,6 +10,10 @@ source of truth. This file carries the always-on contract and points you at
 the right skill for the situation — open that skill's `SKILL.md` and follow
 its numbered pass when its trigger matches.
 
+New here, or the user asked you to install or explain attest? Read
+[docs/for-llms.md](docs/for-llms.md) — the install-and-use guide written for
+agents.
+
 ## Always on — every turn, regardless of skill
 
 **The verdict contract.** Never claim work is done, fixed, passing, or
