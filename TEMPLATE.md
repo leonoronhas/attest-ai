@@ -35,7 +35,7 @@ description: Use when <trigger condition>, before <the thing this gates>.
 
 ## Verdict
 
-<!-- SPINE: copied byte-identical from skills/i-prove/SKILL.md.
+<!-- SPINE: copied byte-identical from skills/i-attest/SKILL.md.
      Never paraphrased per-skill. -->
 
 ## Red Flags — Stop
@@ -62,7 +62,7 @@ conventions. If it is missing, run /i-setup — do not guess.
 2. **Every Pass item produces evidence.** Output, a diff, a file, a table —
    something that exists after the item ran.
 3. **The Verdict section is byte-identical across the family.** Source of
-   truth is `plugins/attest/skills/i-prove/SKILL.md`. When it changes,
+   truth is `plugins/attest/skills/i-attest/SKILL.md`. When it changes,
    it changes everywhere in the same commit.
 4. **No stack names in skill bodies.** Commands, frameworks, and paths come
    from the project adapter (`.claude/attest/project.md`). If a skill needs
@@ -81,7 +81,7 @@ conventions. If it is missing, run /i-setup — do not guess.
 | Understand | `i-explore` (inside the repo) · `i-research` (outside it) |
 | Decide | `i-interrogate` · `i-design` · `i-plan` |
 | Build | `i-code` · `i-refactor` · `i-debug` · `i-migrate` |
-| Review | `im-a-code-reviewer` · `im-a-security-reviewer` · `im-a-design-reviewer` · `im-a-dx-engineer` · `im-an-adversary` · `i-simplify` |
-| Verify | `im-a-qa-engineer` · `i-prove` (the exit contract) |
+| Review | `im-a-code-reviewer` · `im-a-security-reviewer` · `im-a-security-auditor` · `im-a-design-reviewer` · `im-a-dx-engineer` · `im-an-adversary` · `i-simplify` |
+| Verify | `im-a-qa-engineer` · `i-attest` (the exit contract) |
 | Ship | `i-ship` · `i-document` |
 | Setup | `i-setup` |

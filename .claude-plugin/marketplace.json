@@ -9,7 +9,7 @@
         {
             "name": "attest",
             "source": "./plugins/attest",
-            "description": "Evidence-first SDLC skills: /i-prove verdicts (PROVEN / NOT YET / CAN'T PROVE), TDD at seams, two-axis review, root-cause debugging, and project adapters so the suite works in any repo.",
+            "description": "Evidence-first SDLC skills: /i-attest verdicts (PROVEN / NOT YET / CAN'T PROVE), TDD at seams, two-axis review, root-cause debugging, and project adapters so the suite works in any repo.",
             "category": "engineering",
             "keywords": [
                 "verification",

@@ -5,7 +5,7 @@ produced this turn.
 
 An AI agent will tell you the tests pass because they passed an hour ago,
 call a bug fixed because the code changed, and relay a subagent's "success"
-as fact. **attest** is a family of first-person skills — `/i-prove`,
+as fact. **attest** is a family of first-person skills — `/i-attest`,
 `/i-code`, `/im-a-code-reviewer` — that all terminate in the same exit
 contract:
 
@@ -43,27 +43,31 @@ reviewer stance.
 
 | Phase | Skill | Status |
 |---|---|---|
-| Verify | `/i-prove` — the exit contract every skill ends in | ✅ |
+| Verify | `/i-attest` — the exit contract every skill ends in | ✅ |
 | Setup | `/i-setup` — writes the project adapter | ✅ |
 | Review | `/im-an-adversary` — clean-room reviewer on a model that wrote none of the code, primed to refute | ✅ |
 | Build | `/i-code` — TDD at confirmed seams | ✅ |
 | Review | `/im-a-code-reviewer` — two-axis: standards vs spec | ✅ |
 | Review | `/im-a-security-reviewer` — reads the project's security model | ✅ |
+| Review | `/im-a-security-auditor` — codebase-wide deep security review; findings survive refutation or die | ✅ |
 | Review | `/i-simplify` — hunts over-engineering; every finding names its replacement | ✅ |
 | Build | `/i-debug` — root cause before hypothesis; 3 failed fixes ⇒ question the architecture | ✅ |
 | Build | `/i-migrate` — schema changes with guards, dry-runs, rollback notes | ✅ |
 | Decide | `/i-interrogate` — one question at a time, recommendation attached | ✅ |
 | Decide | `/i-plan` — mini-plan, or a decision-ticket map for work bigger than one session | ✅ |
-| Understand | `/i-explore` · `/i-research` | planned |
-| Decide | `/i-design` — deep modules, seams, the deletion test | planned |
-| Build | `/i-refactor` — behavior proven unchanged | planned |
-| Review | `/im-a-design-reviewer` · `/im-a-dx-engineer` | planned |
-| Verify | `/im-a-qa-engineer` — objective signals only | planned |
-| Ship | `/i-ship` · `/i-document` | planned |
-| Intake | `/im-a-tpm` — problem, metric, why now, smallest version | planned |
+| Understand | `/i-explore` — locations with evidence; absence claims name the searches that failed | ✅ |
+| Understand | `/i-research` — primary sources, version-pinned, captured in the repo | ✅ |
+| Decide | `/i-design` — two designs minimum, judged at the interface, deletion test | ✅ |
+| Build | `/i-refactor` — behavior pinned first, green at every step, never mixed | ✅ |
+| Review | `/im-a-design-reviewer` — rendered in every state; findings cite rules or call themselves taste | ✅ |
+| Review | `/im-a-dx-engineer` — audits by performing the journey, timed, from clean | ✅ |
+| Verify | `/im-a-qa-engineer` — objective signals decide; every bug becomes a spec | ✅ |
+| Ship | `/i-ship` — the PR as a verifiable claim package; CI watched to green | ✅ |
+| Ship | `/i-document` — every claim enforced, verified, or cut; no hedges | ✅ |
+| Intake | `/im-a-tpm` — problem, metric, why now, smallest version — before any ticket | ✅ |
 
-Skills land in waves, each proven on real work before the next is written.
-See [TEMPLATE.md](TEMPLATE.md) for the skeleton and family rules.
+The full family is live. See [TEMPLATE.md](TEMPLATE.md) for the skeleton and
+family rules; new skills follow it, spine byte-identical.
 
 ## Design Principles
 

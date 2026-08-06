@@ -1,9 +1,9 @@
 ---
-name: i-prove
+name: i-attest
 description: Use when about to say anything works, is fixed, is done, or passes — before committing, opening a PR, or handing work back. Blocks every success claim until evidence for it exists in this turn.
 ---
 
-# I Prove
+# I Attest
 
 **Core principle:** A claim is a debt. Only evidence produced this turn pays it. Everything else is a promise wearing a claim's clothes.
 

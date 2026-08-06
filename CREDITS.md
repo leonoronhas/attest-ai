@@ -22,6 +22,11 @@ part of the evidence-first ethos.
   (Dietrich Gebert, MIT) — the minimalism ladder (reuse → stdlib → native →
   installed dep → new code); debt markers that name a ceiling and an upgrade
   trigger; compressed one-line review findings scored in net lines cut.
+`im-a-security-auditor` and its `references/vulnerability-catalog.md` are
+adapted from Leo Santos's own `security-code-review` skill — the
+sources→sinks model, the nine-scanner fan-out / verify fan-in, and the
+catalog are his work, brought into the attest family and wired to the
+verdict spine and the project adapter.
 
 ## Older roots, credited where the ideas actually originate
 
