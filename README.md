@@ -53,107 +53,33 @@ the specifics. No skill ever guesses your test command.
 Two naming patterns: `i-<verb>` does the work, `im-a-<role>` puts on a
 reviewer's hat. Every skill runs the same shape — an iron law it won't
 break, a numbered pass that produces evidence, and the verdict contract to
-close. They're grouped below in the order work tends to flow.
+close. The table runs in the order work tends to flow.
 
-### Intake — is this worth building?
-
-- **`/im-a-tpm`** — a request arrives pre-solutioned. Recover the problem
-  behind it, demand a success metric and a why-now, steelman *not* building
-  it, and cut to the smallest version that tests the idea. Nothing enters
-  the backlog half-validated.
-
-### Understand — learn before you touch
-
-- **`/i-explore`** — locate things *inside* the codebase. Read-only; every
-  cited location was opened, and "doesn't exist" names the searches that
-  failed to find it.
-- **`/i-research`** — establish facts from *outside* the codebase (a
-  library, an API, a platform limit). Primary sources, pinned to the
-  version actually installed, written down in the repo.
-
-### Decide — choose on the record
-
-- **`/i-interrogate`** — the open questions that are the human's to answer.
-  One at a time, each with a recommendation attached; budget scales by
-  risk, never by who's asking.
-- **`/i-design`** — shape a module before building it. Write the call site
-  first, design it *twice*, judge at the interface with the deletion test,
-  and record the design you rejected.
-- **`/i-plan`** — a five-line mini-plan for one session, or a
-  decision-ticket map for work too big for one. Every task independently
-  rejectable, every unknown named, no placeholders.
-
-### Build — make the change
-
-- **`/i-code`** — TDD at confirmed seams. Watch the test fail before you
-  make it pass; expected values come from an independent source; mocks only
-  at system boundaries.
-- **`/i-execute`** — run a whole plan in one session: publish the task
-  roadmap as a live checklist, dispatch a fresh subagent per task, review
-  between tasks so drift is caught early, and keep a ledger that survives a
-  compaction.
-- **`/i-debug`** — reproduce before you fix, one hypothesis at a time, fix
-  at the root where all callers route through. Three failed fixes means the
-  architecture is the bug — stop and say so.
-- **`/i-refactor`** — change structure while behavior stays identical.
-  Behavior pinned first, green after every small step, never mixed into the
-  same diff as a behavior change.
-- **`/i-migrate`** — a schema change is an act on real data. Guard before
-  write, dry-run before apply, rollback note before merge — and because
-  constraints only fail on writes, no migration is done until it has
-  accepted a real row.
-- **`/i-simplify`** — hunt over-engineering, in a diff or across the repo.
-  Climb the ladder (reuse → stdlib → native → installed dep → new code);
-  every finding names what replaces it. Finds cuts; `/i-refactor` applies
-  them.
-
-### Review — a second mind before merge
-
-- **`/im-a-code-reviewer`** — two axes kept deliberately apart: does it
-  follow the repo's standards, and does it do what the spec asked. Reported
-  separately so neither buries the other.
-- **`/im-an-adversary`** — a clean-room reviewer on a model that wrote none
-  of the code, primed to refute rather than approve. Independence is a
-  context property first, a model property second.
-- **`/im-a-security-reviewer`** — one diff against the project's own threat
-  model. Trace the boundaries it touches; exercise the rejection path, don't
-  just read it.
-- **`/im-a-security-auditor`** — the codebase-wide deep sweep. Trace
-  untrusted input to dangerous sinks across nine scanner passes; every
-  finding is re-traced against the code, or it doesn't ship.
-- **`/im-a-design-reviewer`** — UI reviewed *rendered*, in every state that
-  ships, both themes. Findings cite the design system's own rules; taste is
-  labeled as taste and never becomes a redesign.
-- **`/im-a-dx-engineer`** — audit what it's like to work in the repo by
-  *performing* the journey from a clean clone, timed. Broken, friction, or
-  missing — each with the stumble that proves it.
-
-### Verify — prove it works, then say so
-
-- **`/im-a-qa-engineer`** — drive the real app where users touch it.
-  Objective signals (console errors, 4xx/5xx, crashes, dead nav) decide
-  pass/fail; judgment produces findings, not failures; every bug found
-  becomes a permanent spec.
-- **`/i-attest`** — the exit contract every other skill ends in. No
-  completion claim without evidence produced this turn; unprovable claims
-  go on the Unverified List for per-item acknowledgment. For trivial work,
-  this pass alone is the whole ceremony.
-
-### Ship — hand it off honestly
-
-- **`/i-ship`** — assemble the PR as a verifiable claim package: base
-  synced, canonical check run, the diff self-reviewed cold, a body a
-  stranger can act on, CI watched to green. Nothing claimed that didn't run
-  this session.
-- **`/i-document`** — the docs the change demands. Every claim is enforced,
-  verified, or cut — a hedge is a claim nobody checked. Run every command
-  the doc states.
-
-### Setup — teach the suite your repo
-
-- **`/i-setup`** — interview the repo and write `.claude/attest/project.md`
-  and `security-model.md`. Skills ship the method; this writes down the
-  specifics so no skill ever guesses your commands.
+| Phase | Skill | What it does |
+|---|---|---|
+| **Intake** | `/im-a-tpm` | Recover the problem behind a pre-solutioned request; demand a metric and a why-now; steelman *not* building it; cut to the smallest version that tests the idea. |
+| **Understand** | `/i-explore` | Locate things *inside* the codebase. Read-only; every cited location was opened, and "doesn't exist" names the searches that failed. |
+| | `/i-research` | Establish facts from *outside* the codebase — library, API, platform limit. Primary sources, pinned to the installed version, written to the repo. |
+| **Decide** | `/i-interrogate` | Open questions that are the human's to answer — one at a time, each with a recommendation; budget scales by risk, never by who's asking. |
+| | `/i-design` | Shape a module before building. Write the call site first, design it *twice*, judge at the interface with the deletion test, record the rejected design. |
+| | `/i-plan` | A five-line mini-plan for one session, or a decision-ticket map for bigger work. Every task independently rejectable, every unknown named, no placeholders. |
+| **Build** | `/i-code` | TDD at confirmed seams. Watch the test fail first; expected values from an independent source; mocks only at system boundaries. |
+| | `/i-execute` | Run a whole plan in one session: live roadmap checklist, a fresh subagent per task, review between tasks, a ledger that survives compaction. |
+| | `/i-debug` | Reproduce before you fix; one hypothesis at a time; fix at the root all callers route through. Three failed fixes ⇒ the architecture is the bug. |
+| | `/i-refactor` | Change structure while behavior stays identical. Behavior pinned first, green after every small step, never mixed with a behavior change. |
+| | `/i-migrate` | Guard before write, dry-run before apply, rollback note before merge. Constraints only fail on writes — so no migration is done until it accepts a real row. |
+| | `/i-simplify` | Hunt over-engineering, in a diff or repo-wide. Climb the ladder (reuse → stdlib → native → installed dep → new code); every finding names its replacement. |
+| **Review** | `/im-a-code-reviewer` | Two axes kept apart: does it follow the repo's standards, and does it do what the spec asked — reported separately so neither buries the other. |
+| | `/im-an-adversary` | A clean-room reviewer on a model that wrote none of the code, primed to refute. Independence is a context property first, a model property second. |
+| | `/im-a-security-reviewer` | One diff against the project's own threat model. Trace the boundaries it touches; exercise the rejection path, don't just read it. |
+| | `/im-a-security-auditor` | The codebase-wide deep sweep — untrusted input to dangerous sinks across nine scanner passes; every finding re-traced against the code or dropped. |
+| | `/im-a-design-reviewer` | UI reviewed *rendered*, in every state that ships, both themes. Findings cite the design system's rules; taste is labeled taste, never a redesign. |
+| | `/im-a-dx-engineer` | Audit the repo by *performing* the journey from a clean clone, timed. Broken / friction / missing — each with the stumble that proves it. |
+| **Verify** | `/im-a-qa-engineer` | Drive the real app where users touch it. Objective signals decide pass/fail; judgment produces findings; every bug found becomes a permanent spec. |
+| | `/i-attest` | The exit contract every skill ends in. No completion claim without evidence this turn; unprovable claims go on the Unverified List. Whole ceremony for trivial work. |
+| **Ship** | `/i-ship` | The PR as a verifiable claim package: base synced, canonical check run, diff self-reviewed cold, a body a stranger can act on, CI watched to green. |
+| | `/i-document` | The docs the change demands. Every claim enforced, verified, or cut — a hedge is a claim nobody checked. Run every command the doc states. |
+| **Setup** | `/i-setup` | Interview the repo and write `.claude/attest/project.md` + `security-model.md`, so no skill ever guesses your commands. |
 
 See [TEMPLATE.md](TEMPLATE.md) for the skeleton every skill follows.
 
