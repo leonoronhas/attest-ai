@@ -26,6 +26,8 @@ Publish these steps as a live checklist before you start (the harness todo tool)
 5. **Verdict each finding against the budget.** Measured impact, compared to the named budget: over budget = finding with the number; within budget = noted and cleared — a measured "fine" is a real result, not a wasted pass. A suspect you couldn't measure ships as PLAUSIBLE with the model and the missing measurement named, never as a fact.
 6. **Recommend with the price tag.** Every fix names what it costs — complexity, readability, a cache to invalidate, a dependency. A fix that costs clarity needs the measurement to justify it, and cold paths default to the simple version (`/i-simplify` owns that direction). State where the fix's own risk goes: a new cache is a new correctness surface.
 
+**Sweep-only mode — proportional to the change.** Steps 3 and 6 alone are a legitimate pass on a small diff: name the suspects with their locations, report them as PLAUSIBLE, stop. Measurement (step 4) is the expensive half — reserve it for diffs touching a named hot path, or for a sweep suspect that lands on one. Two rules keep the cheap mode honest: an unmeasured suspect is **never** reported as a fact, and a suspect landing on a hot path is an **escalation** — say so plainly, because that diff now deserves the measured pass no matter how few lines it is. Four lines that put a query inside a loop are a hot-path change; line count is not risk.
+
 **Boundary:** *making* a slow thing fast is `/i-debug` — a perf regression is a bug whose reproduction is a measurement. Setting budgets is the human's call, surfaced through `/i-interrogate`. This skill judges a change against the budgets that exist.
 
 ## Verdict
