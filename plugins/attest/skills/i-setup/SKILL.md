@@ -15,16 +15,21 @@ Two files in the consuming repo, from the templates shipped with this plugin:
 |---|---|---|
 | `.claude/attest/project.md` | Commands, stack, layout, conventions, guards | Yes |
 | `.claude/attest/security-model.md` | This project's sensitive surfaces and known threat patterns | Team's call — private repos usually yes; never in a public repo if it names unpatched weaknesses |
+| `.claude/attest/timings.local.jsonl` | Per-run skill durations (`{"skill","step","date","elapsed_s","scope"}`) — what grounds every ETA in this user's real runs | **No — per-user.** This skill adds `.claude/attest/*.local.jsonl` to `.gitignore` |
 
-Every other attest skill reads these instead of hardcoding a stack.
+Every other attest skill reads these instead of hardcoding a stack. When the
+suite adds new adapter slots (a new skill usually brings some), re-run this
+skill to fill them — an adapter missing a slot sends every skill that needs
+it back here.
 
 ## The Pass
 
 1. **Detect before asking.** Read the repo first: package manager and version pins (lockfiles, `packageManager` fields), workspace layout, test frameworks and where tests live, lint/format/type-check commands, CI workflows and what they enforce, existing agent instructions (`CLAUDE.md`, `AGENTS.md`, `CONTRIBUTING.md`). Everything detectable gets written without a question.
 2. **Ask only what the repo can't answer.** One question at a time, with a recommendation attached. Typical residue: which command is the canonical "run everything" check, which operations are destructive and what guard must precede them, where the issue tracker lives and how specs are referenced, what counts as customer-facing.
 3. **Fill the templates.** Copy `templates/project.md` and `templates/security-model.md` from this plugin into `.claude/attest/` and fill every slot. A slot you can't fill gets `UNKNOWN — ask the team`, never a guess: a wrong command in the adapter poisons every skill that reads it.
-4. **Verify the adapter against reality.** Run each command you wrote into `project.md` and confirm it executes (a dry-run or `--help` is acceptable for destructive ones). A command that fails in setup will fail worse mid-review.
-5. **Render the verdict.** Per adapter entry: PROVEN (ran it), NOT YET (missing), CAN'T PROVE (needs credentials or infrastructure not present here).
+4. **Create the timings ledger and gitignore it.** Touch `.claude/attest/timings.local.jsonl` and add `.claude/attest/*.local.jsonl` to the repo's `.gitignore` if absent. Every skill appends its run's elapsed there and reads it before announcing an ETA — per-user data, never committed, never shared: one dev's machine says nothing about another's.
+5. **Verify the adapter against reality.** Run each command you wrote into `project.md` and confirm it executes (a dry-run or `--help` is acceptable for destructive ones). A command that fails in setup will fail worse mid-review.
+6. **Render the verdict.** Per adapter entry: PROVEN (ran it), NOT YET (missing), CAN'T PROVE (needs credentials or infrastructure not present here).
 
 ## Verdict
 

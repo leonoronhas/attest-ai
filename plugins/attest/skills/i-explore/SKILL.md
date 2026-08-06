@@ -24,7 +24,7 @@ EVERY LOCATION CITED WAS OPENED. EVERY ABSENCE CLAIM NAMES THE SEARCHES THAT FAI
 5. **Report as a location table.** `file:line` per finding, what it is (definition / caller / config / test), and one line of what it does. Confidence stated where it's less than certain: "appears unused — no static callers found; dynamic access not ruled out."
 6. **Name what you didn't find.** Absences reported with the searches that failed to find them — terms, paths, and any territory not covered (generated code, other repos, runtime config). That's what lets the reader judge whether "not found" means "not there."
 
-**Boundary:** this skill locates; it does not evaluate or fix. Findings that beg for action route onward — bugs to `/i-debug`, bloat to `/i-simplify`, design questions to `/i-design`. Facts *outside* the repo (library behavior, API contracts, platform limits) belong to `/i-research`.
+**Boundary:** this skill locates; it does not evaluate or fix. Findings that beg for action route onward — bugs to `/i-debug`, bloat to `/i-simplify`, design questions to `/i-design`. Facts *outside* the repo (library behavior, API contracts, platform limits) belong to `/i-research`. Wide sweeps are subagent work where the harness allows: dispatch the sweep and take back the location table, not the file dumps — the coordinator's context is for steering, not storage.
 
 ## Verdict
 

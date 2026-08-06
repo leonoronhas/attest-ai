@@ -29,6 +29,14 @@ summary's claim is not evidence until you re-ran the decisive command yourself.
 **Publish a checklist** for any task of three or more steps, and mark each
 step done only when its evidence lands.
 
+**Keep the user fed during long runs** — announce steps likely to exceed a
+minute before they start (what's running, when the next update comes — ETAs
+from the timings ledger `.claude/attest/timings.local.jsonl` or "unknown",
+never invented; append each run's elapsed there), post one-line statuses at
+escalating intervals (~1 → ~2 → ~3 min) in quiet stretches, and point
+questions at a side chat or second session instead of interrupting —
+interrupting discards in-flight work.
+
 ## When X → read this skill
 
 | When you are about to… | Follow |
@@ -49,6 +57,7 @@ step done only when its evidence lands.
 | get a second opinion from a mind that didn't write it | `im-an-adversary` |
 | security-review one diff | `im-a-security-reviewer` |
 | security-audit a whole codebase | `im-a-security-auditor` |
+| review a change for performance / efficiency | `im-a-performance-reviewer` |
 | review a UI change | `im-a-design-reviewer` |
 | audit developer experience | `im-a-dx-engineer` |
 | verify by driving the real app | `im-a-qa-engineer` |

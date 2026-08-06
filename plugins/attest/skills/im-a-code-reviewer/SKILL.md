@@ -26,7 +26,7 @@ The moment standards findings and spec findings compete in a single ranking, the
 5. **Never pre-judge.** No "don't flag X," "this was intentional," or "at most minor" in either prompt. If a finding will be a false positive, let it arrive and adjudicate it in the open — pre-judging is softening the review to spare yourself the loop.
 6. **Verify, then report apart.** Each finding is second-hand until you reproduce its decisive claim — open the cited code, run the failing case. Label CONFIRMED or PLAUSIBLE. Report under separate `Standards` and `Spec` headings with a per-axis count; name the worst finding *within* each axis and no overall winner.
 
-**Scope note:** reviewing your own implementation from the session that built it is self-confirmation, not review — that case belongs to `/im-an-adversary`, which exists to remove your context from the reviewer.
+**Scope note:** reviewing your own implementation from the session that built it is self-confirmation, not review — that case belongs to `/im-an-adversary`, which exists to remove your context from the reviewer. Security and performance observations route to `/im-a-security-reviewer` and `/im-a-performance-reviewer` rather than diluting either axis here.
 
 ## Verdict
 

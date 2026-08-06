@@ -1,6 +1,6 @@
 ---
 name: i-debug
-description: Use when anything is broken, failing, or behaving unexpectedly — before proposing any fix. Reproduction first, root cause before hypothesis, and a hard stop after three failed fixes.
+description: Use when anything is broken, failing, slow, or behaving unexpectedly — before proposing any fix. Reproduction first, root cause before hypothesis, and a hard stop after three failed fixes.
 ---
 
 # I Debug
@@ -17,9 +17,9 @@ The pull to skip this is strongest exactly when it matters most: under time pres
 
 ## The Pass
 
-Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands.
+Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands. Announce any step likely to exceed a minute before it starts — what's running, when the next update comes (real basis or "unknown") — and post one-line updates at escalating intervals (1 → 2 → 3 min) whenever a quiet stretch allows. Route mid-run questions to a side chat (`/btw` in Claude Code; elsewhere, a second session) instead of interrupting — interrupting discards in-flight work. Ground every ETA in the timings ledger (`.claude/attest/timings.local.jsonl`) and append this run's elapsed on completion.
 
-1. **Reproduce it.** A command that fails now and will pass when the bug is dead — run it, watch it fail, keep it. Can't reproduce? Then the job is gathering data (logs, inputs, environment diffs), not fixing. A bug you can't trigger is a bug you can't verify dead.
+1. **Reproduce it.** A command that fails now and will pass when the bug is dead — run it, watch it fail, keep it. Can't reproduce? Then the job is gathering data (logs, inputs, environment diffs), not fixing. A bug you can't trigger is a bug you can't verify dead. A performance regression is a bug whose reproduction is a measurement — capture the number that's wrong (latency, count, size) exactly as you'd capture a failing test, and "fixed" means the number moved.
 2. **Read the error to the bottom.** The full message, the full stack, the actual line. Error messages routinely contain the answer, and get skimmed because they're long. Note what it says *and* what it conspicuously doesn't.
 3. **Check what changed.** Recent commits, dependency bumps, config edits, environment differences between where it works and where it doesn't. Most bugs are young — the diff since "it worked" is the smallest haystack.
 4. **Instrument the boundaries.** When the system has layers (request → service → database, build → sign → deploy), log what enters and exits each one and run the repro once. Evidence shows *which* layer breaks; then you investigate one layer instead of theorizing about five.

@@ -73,6 +73,7 @@ close. The table runs in the order work tends to flow.
 | | `/im-an-adversary` | A clean-room reviewer on a model that wrote none of the code, primed to refute. Independence is a context property first, a model property second. |
 | | `/im-a-security-reviewer` | One diff against the project's own threat model. Trace the boundaries it touches; exercise the rejection path, don't just read it. |
 | | `/im-a-security-auditor` | The codebase-wide deep sweep — untrusted input to dangerous sinks across nine scanner passes; every finding re-traced against the code or dropped. |
+| | `/im-a-performance-reviewer` | Every perf claim carries a number — faster, slower, and "fine" alike. A category sweep names suspects; only measurements against seeded volumes and named budgets convict. |
 | | `/im-a-design-reviewer` | UI reviewed *rendered*, in every state that ships, both themes. Findings cite the design system's rules; taste is labeled taste, never a redesign. |
 | | `/im-a-dx-engineer` | Audit the repo by *performing* the journey from a clean clone, timed. Broken / friction / missing — each with the stumble that proves it. |
 | **Verify** | `/im-a-qa-engineer` | Drive the real app where users touch it. Objective signals decide pass/fail; judgment produces findings; every bug found becomes a permanent spec. |

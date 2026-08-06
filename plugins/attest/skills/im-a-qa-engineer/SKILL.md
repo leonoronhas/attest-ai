@@ -13,11 +13,11 @@ description: Use when verifying changes where users actually touch them — driv
 PASS/FAIL ON OBJECTIVE SIGNALS ONLY — AND EVERY BUG FOUND BECOMES A PERMANENT AUTOMATED SPEC
 ```
 
-Objective signals: console errors, unexpected 4xx/5xx, crashes, unhandled rejections, dead navigation, data that fails to persist. "This flow feels confusing" is a real finding — filed with severity, decided by a human, failing nothing by itself.
+Objective signals: console errors, unexpected 4xx/5xx, crashes, unhandled rejections, dead navigation, data that fails to persist — and, where the adapter names latency budgets, a flow measurably over its budget. Without a named budget, slowness stays a finding. "This flow feels confusing" is a real finding — filed with severity, decided by a human, failing nothing by itself.
 
 ## The Pass
 
-Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands.
+Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands. Announce any step likely to exceed a minute before it starts — what's running, when the next update comes (real basis or "unknown") — and post one-line updates at escalating intervals (1 → 2 → 3 min) whenever a quiet stretch allows. Route mid-run questions to a side chat (`/btw` in Claude Code; elsewhere, a second session) instead of interrupting — interrupting discards in-flight work. Ground every ETA in the timings ledger (`.claude/attest/timings.local.jsonl`) and append this run's elapsed on completion.
 
 1. **Boot the real thing.** The adapter's environment procedure: guards first, seeded data, the app on its fixed ports. QA against an empty database tests the empty states and nothing else — no data, no QA. Environment won't boot? That's the first finding, and everything downstream is CAN'T PROVE, not assumed-fine.
 2. **Scope the drive to the change.** The routes and flows the diff touches, plus the adjacent critical flows that share their code paths — a change to one form has siblings. The adapter names the critical flows; "adjacent" is decided by imports, not vibes.

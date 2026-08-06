@@ -75,7 +75,7 @@ PLAUSIBLE upgrades to PROVEN only when you re-run the decisive command yourself,
 
 ## Scope
 
-This skill is the exit contract of every other attest skill — each one ends by rendering this verdict block over its own claims. For trivial work (docs, copy, comments), running this pass alone *is* the entire ceremony.
+This skill is the exit contract of every other attest skill — each one ends by rendering this verdict block over its own claims. For trivial work (docs, copy, comments), running this pass alone *is* the entire ceremony — and proportionally: on a change that executes nothing, items 1, 2, and 6 are the pass; the full six bind anything that runs. Matched effort is what keeps the ceremony honored instead of skipped.
 
 ## Project Specifics
 

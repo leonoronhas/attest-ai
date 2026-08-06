@@ -41,6 +41,14 @@
 - **Generated files (never hand-edit):**
 - **Feature/module convention:**
 
+## Performance
+
+- **Hot paths** (routes/jobs/queries where latency matters):
+- **Budgets** (path → target, e.g. `GET /api/orders → p95 < 300ms`):
+- **Benchmark command:**
+- **Profiler:**
+- **Realistic data volume** (what the seed provides; N+1 is invisible at n=3):
+
 ## Issue Tracker
 
 - **Tracker:**
@@ -60,3 +68,4 @@
 - **Commit format:**
 - **Branch naming:**
 - **PR template location:**
+- **Side-chat command** for questions during long runs (`/btw` in Claude Code; blank if the harness has none):

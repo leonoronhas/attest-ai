@@ -83,6 +83,14 @@ you to run `/i-setup` rather than guess. Do not guess commands — run setup.
    the decisive command yourself this turn.
 3. **Publish a checklist** for any task of three or more steps and mark each
    step done only when its evidence lands.
+4. **Keep the user fed during long runs.** Announce steps likely to exceed a
+   minute before they start (what's running, when the next update comes —
+   ETAs from the timings ledger `.claude/attest/timings.local.jsonl`, this
+   user's real prior runs, or "unknown" — never invented; append each run's
+   elapsed there); post one-line statuses at escalating intervals (~1 → ~2 →
+   ~3 min) in quiet stretches; point questions at a side chat (`/btw` in
+   Claude Code) instead of interrupting — interrupting discards in-flight
+   work.
 
 ## If the user just pasted the link and asked what this is
 

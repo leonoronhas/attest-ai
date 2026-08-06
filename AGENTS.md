@@ -35,6 +35,17 @@ steps, surface the steps to the user (a todo list, or just a written list)
 and mark each done only when its evidence lands. A silent multi-step run
 reads as a hung one.
 
+**Keep the user fed during long runs.** Announce any step likely to exceed a
+minute before it starts — what's running and when the next update comes.
+ETAs come from the timings ledger (`.claude/attest/timings.local.jsonl` —
+per-user, gitignored; append each run's elapsed, read it before estimating)
+or are stated as "unknown" — never invented. Update at every boundary, and
+in quiet stretches post one-line statuses at escalating intervals (~1 min,
+then ~2, then ~3). If a step runs as one blocking call, say up front that
+silence until it returns is normal. Point questions at a side chat (`/btw`
+in Claude Code; elsewhere, a second session) instead of interrupting —
+interrupting discards in-flight work.
+
 ## When X → read this skill
 
 | When you are about to… | Follow |
@@ -55,6 +66,7 @@ reads as a hung one.
 | get a second opinion from a mind that didn't write the code | `im-an-adversary` |
 | security-review one diff | `im-a-security-reviewer` |
 | security-audit a whole codebase | `im-a-security-auditor` |
+| review a change for performance / efficiency | `im-a-performance-reviewer` |
 | review a UI change | `im-a-design-reviewer` |
 | audit onboarding / developer experience | `im-a-dx-engineer` |
 | verify a change by driving the real app | `im-a-qa-engineer` |

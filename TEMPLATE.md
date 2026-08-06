@@ -83,6 +83,25 @@ conventions. If it is missing, run /i-setup — do not guess.
    checkmarks are where the verdict table's evidence accretes step by step.
    Trivial single-step skills need no checklist; anything with three or
    more Pass items gets one.
+8. **Keep the user fed during long runs.** Announce any step likely to
+   exceed a minute *before* it starts — what's running and when the next
+   update comes (a range from a real basis, or "unknown duration"; never an
+   invented ETA — a blown fake ETA teaches people to interrupt). Update at
+   every boundary (subagent return, fix round, checkmark), and in quiet
+   stretches post one-line statuses at escalating intervals — after ~1
+   minute, then ~2, then ~3 — whenever you have the floor. Be honest about
+   mute stretches: nothing can be emitted while a blocking call is in
+   flight, so a step that runs blind gets announced as such up front
+   ("silence until this returns is normal"); prefer background dispatch for
+   steps past ~2 minutes where the harness supports it. Point questions at
+   a side chat (`/btw` in Claude Code; elsewhere, a second session) instead
+   of the interrupt key, and state the interrupt cost once: in-flight work
+   discarded, the step restarts. On completion, report actual elapsed and
+   append it to the timings ledger — `.claude/attest/timings.local.jsonl`,
+   one JSON line per run: `{"skill", "step", "date", "elapsed_s", "scope"}`.
+   ETAs are read from that ledger (this user's real prior runs, as ranges)
+   or stated as "unknown" — never invented. The ledger is per-user and
+   gitignored; `/i-setup` creates it and the ignore entry.
 
 ## Family Map
 
@@ -92,7 +111,7 @@ conventions. If it is missing, run /i-setup — do not guess.
 | Understand | `i-explore` (inside the repo) · `i-research` (outside it) |
 | Decide | `i-interrogate` · `i-design` · `i-plan` |
 | Build | `i-code` · `i-refactor` · `i-debug` · `i-migrate` · `i-execute` (orchestrates a plan) |
-| Review | `im-a-code-reviewer` · `im-a-security-reviewer` · `im-a-security-auditor` · `im-a-design-reviewer` · `im-a-dx-engineer` · `im-an-adversary` · `i-simplify` |
+| Review | `im-a-code-reviewer` · `im-a-security-reviewer` · `im-a-security-auditor` · `im-a-performance-reviewer` · `im-a-design-reviewer` · `im-a-dx-engineer` · `im-an-adversary` · `i-simplify` |
 | Verify | `im-a-qa-engineer` · `i-attest` (the exit contract) |
 | Ship | `i-ship` · `i-document` |
 | Setup | `i-setup` |

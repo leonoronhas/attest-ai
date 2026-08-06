@@ -17,11 +17,11 @@ And one rule the type system cannot enforce, so this skill must: **constraints o
 
 ## The Pass
 
-Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands.
+Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands. Announce any step likely to exceed a minute before it starts — what's running, when the next update comes (real basis or "unknown") — and post one-line updates at escalating intervals (1 → 2 → 3 min) whenever a quiet stretch allows. Route mid-run questions to a side chat (`/btw` in Claude Code; elsewhere, a second session) instead of interrupting — interrupting discards in-flight work. Ground every ETA in the timings ledger (`.claude/attest/timings.local.jsonl`) and append this run's elapsed on completion.
 
 1. **Run the guard.** The adapter's destructive-op guard before any command that writes to a database — and it must fail *closed*: if the target can't be determined, the answer is no. Local tooling resolves targets through config files that can silently point anywhere, including production.
 2. **Name the downstream consumers.** A schema is an interface; the migration changes its contract. List every consumer before writing it: generated types, seed and fixture generators, caches, reports, other services reading the same tables. Each one is a task this migration creates — an unnamed consumer is a breakage scheduled for later.
-3. **Dry-run, and read the plan.** Preview what will execute against a real copy (local instance or branch database) before anything applies. The dry-run output is evidence for the verdict table; "the file looks right" is not.
+3. **Dry-run, and read the plan.** Preview what will execute against a real copy (local instance or branch database) before anything applies. The dry-run output is evidence for the verdict table; "the file looks right" is not. And the dry-run tells you *what* will run — never *how long* or *what it locks*: for any large table, check the operation's lock behavior and rewrite cost before applying, because an index build or column rewrite that blocks writes for minutes is an outage shipped as a migration.
 4. **Regenerate derived artifacts, then type-check.** Types, clients, schema snapshots — regenerate all of them and let the compiler name every consumer the change broke. This catches renames and drops; it structurally cannot catch constraints.
 5. **Exercise a real write.** Because of that blind spot: after applying locally, run the seed, the fixture loader, or a representative insert against every touched table. This is the only test that fires a CHECK, a unique collision, or a NOT NULL default gap. A migration that has never accepted a row is unverified by definition.
 6. **Write the rollback note.** How to undo it — the reverse migration, or the honest sentence "irreversible: drops data; recovery is restore-from-backup plus backfill." Irreversible is acceptable; undeclared is not. Then the deploy order when code and schema must move together: which ships first, and what breaks in the window between.
@@ -55,6 +55,7 @@ Render the verdict as a table:
 - A rename implemented as drop-and-create — that's data loss with extra steps
 - No row ever written to the changed table before calling it verified
 - A migration reaching a shared tier through a side channel the checks don't cover
+- A large-table operation applied with no thought for lock behavior — correct DDL that blocks writes for minutes is still an outage
 - The rollback section saying "revert the migration" for a change that destroyed information
 
 ## Rationalizations

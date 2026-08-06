@@ -24,6 +24,8 @@ Code that looks like it verifies a signature and code that verifies a signature 
 5. **Hunt secrets and leakage.** The diff and its generated artifacts: credentials committed, server secrets reaching a client bundle, sensitive values in logs, URLs, or error messages. Check what the change *emits*, not only what it stores.
 6. **Exercise the failure path.** Signature verification, guards, permission checks, rate limits — run the rejection case: the forged webhook, the wrong-tenant ID, the missing header, the guard against a refused target. Green on the happy path proves nothing about the boundary; the boundary *is* the failure path.
 
+**Detection guidance per vulnerability family** lives in the auditor's catalog — `plugins/attest/skills/im-a-security-auditor/references/vulnerability-catalog.md`. Read the sections matching the surfaces this diff touches (smells, minimal examples, correct fixes); don't re-derive them.
+
 **Severity is exploitability × blast radius** — who can trigger it, from where, and what do they get. "An authenticated user of tenant A can read tenant B's invoices" outranks any number of theoretical header hardenings. Findings without a reproduction are PLAUSIBLE and say so.
 
 ## Verdict

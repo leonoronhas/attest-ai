@@ -17,14 +17,14 @@ The mixed diff is the cardinal sin: a structure change and a behavior change in 
 
 ## The Pass
 
-Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands.
+Publish these steps as a live checklist before you start (the harness todo tool); mark each done only when its evidence lands. Announce any step likely to exceed a minute before it starts — what's running, when the next update comes (real basis or "unknown") — and post one-line updates at escalating intervals (1 → 2 → 3 min) whenever a quiet stretch allows. Route mid-run questions to a side chat (`/btw` in Claude Code; elsewhere, a second session) instead of interrupting — interrupting discards in-flight work. Ground every ETA in the timings ledger (`.claude/attest/timings.local.jsonl`) and append this run's elapsed on completion.
 
 1. **Pin the behavior.** The code being reshaped has covering tests, and they pass — run them, read the count. No coverage? Write **characterization tests** first: assert what the code *actually does*, warts included. A characterization test that documents a bug is correct — the bug is current behavior, and fixing it is a separate, later diff.
 2. **Declare the target shape and its source.** What the structure becomes and why — an `/i-simplify` finding, an `/i-design` decision, a duplication to collapse. A refactor without a stated destination wanders, and wandering refactors are where behavior changes sneak in.
 3. **Move in small reversible steps, green after each.** Extract, run; rename, run; inline, run. A red mid-step means the step was too big — revert it and take a smaller one, never "fix it forward" while red, because forward-fixing while red is behavior change under cover of noise.
 4. **Sweep for stragglers the compiler can't see.** Renames and moves update static references; grep for the rest — string references, dynamic access, reflection, serialized names, config keys, docs. The compiler's silence covers only what the compiler can see.
 5. **Audit your own diff for smuggled behavior.** Read the final diff hunk by hunk asking one question: does anything observable change? Reordered side effects, a tightened condition, a default that shifted, an error message reworded — each is behavior wearing a refactor's clothes. Found one? Pull it out into its own diff.
-6. **Prove parity.** Full covering suite green, and any golden outputs — snapshots, fixtures, generated artifacts — byte-identical. **Test edits are the tell:** a refactor that had to change test *assertions* changed behavior; only mechanical updates (imports, names, paths) are legitimate.
+6. **Prove parity.** Full covering suite green, and any golden outputs — snapshots, fixtures, generated artifacts — byte-identical. On a named hot path, parity includes the number: run the adapter's benchmark — behavior parity with doubled latency is not parity. **Test edits are the tell:** a refactor that had to change test *assertions* changed behavior; only mechanical updates (imports, names, paths) are legitimate.
 
 **Boundary:** finding what to cut is `/i-simplify`'s job; deciding the new shape is `/i-design`'s. This skill is the move itself. New behavior mid-refactor stops the refactor — finish it, land it, then `/i-code` the new behavior on the clean base.
 

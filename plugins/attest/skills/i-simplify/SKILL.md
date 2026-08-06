@@ -44,7 +44,7 @@ The ladder shortens the solution, never the reading. Understand the change end t
 
 Correctness bugs, security holes, and performance route to `/im-a-code-reviewer` and `/im-a-security-reviewer` — hunting them here dilutes both reviews. And never flag for deletion: validation at trust boundaries, error handling that prevents data loss, accessibility basics, the one runnable check that proves non-trivial logic, or anything explicitly requested. If the user insists on the full version after hearing the lean one, build it — no re-arguing.
 
-This skill lists cuts; it does not apply them. Applying is `/i-refactor`'s job, with its own proof that behavior held.
+This skill lists cuts; it does not apply them. Applying is `/i-refactor`'s job, with its own proof that behavior held. Performance findings route to `/im-a-performance-reviewer` — and the tension resolves by measurement: a cut that would slow a *named hot path* needs the number before it ships, while cold paths default to the simple version.
 
 ## Verdict
 
